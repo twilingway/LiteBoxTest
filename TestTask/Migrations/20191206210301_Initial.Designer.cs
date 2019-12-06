@@ -10,7 +10,7 @@ using TestTask.Data;
 namespace TestTask.Migrations
 {
     [DbContext(typeof(TestTaskContext))]
-    [Migration("20191204173913_Initial")]
+    [Migration("20191206210301_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
