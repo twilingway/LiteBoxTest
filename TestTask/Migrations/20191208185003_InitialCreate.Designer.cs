@@ -10,8 +10,8 @@ using TestTask.Data;
 namespace TestTask.Migrations
 {
     [DbContext(typeof(TestTaskContext))]
-    [Migration("20191208142943_Initial")]
-    partial class Initial
+    [Migration("20191208185003_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

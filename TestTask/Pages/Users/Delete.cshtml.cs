@@ -20,20 +20,26 @@ namespace TestTask
         }
 
         [BindProperty]
-        public User User { get; set; }
-
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public new User User { get; set; }
+        public string ErrorMessage { get; set; }
+        public async Task<IActionResult> OnGetAsync(int? id, bool? saveChangesError = false)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            User = await _context.User.FirstOrDefaultAsync(m => m.ID == id);
+            User = await _context.User
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.ID == id);
 
             if (User == null)
             {
                 return NotFound();
+            }
+            if (saveChangesError.GetValueOrDefault())
+            {
+                ErrorMessage = "Delete failed. Try again";
             }
             return Page();
         }
@@ -45,15 +51,28 @@ namespace TestTask
                 return NotFound();
             }
 
-            User = await _context.User.FindAsync(id);
+            User = await _context.User
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.ID == id);
 
-            if (User != null)
+            if (User == null)
+            {
+                return NotFound();
+            }
+
+            try
             {
                 _context.User.Remove(User);
                 await _context.SaveChangesAsync();
+                return RedirectToPage("./Index");
+            }
+            catch (DbUpdateException /* ex */)
+            {
+                //Log the error (uncomment ex variable name and write a log.)
+                return RedirectToAction("./Delete",
+                                     new { id, saveChangesError = true });
             }
 
-            return RedirectToPage("./Index");
         }
     }
 }
