@@ -14,7 +14,7 @@ namespace TestTask.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(maxLength: 60, nullable: false),
                     Birthday = table.Column<DateTime>(nullable: false),
                     IsMale = table.Column<bool>(nullable: false),
                     Request = table.Column<int>(nullable: false)

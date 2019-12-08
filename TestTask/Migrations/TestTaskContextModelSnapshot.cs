@@ -29,7 +29,9 @@ namespace TestTask.Migrations
 
                     b.Property<bool>("IsMale");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(60);
 
                     b.Property<int>("Request");
 

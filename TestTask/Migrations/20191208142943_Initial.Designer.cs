@@ -10,7 +10,7 @@ using TestTask.Data;
 namespace TestTask.Migrations
 {
     [DbContext(typeof(TestTaskContext))]
-    [Migration("20191206210301_Initial")]
+    [Migration("20191208142943_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,7 +31,9 @@ namespace TestTask.Migrations
 
                     b.Property<bool>("IsMale");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(60);
 
                     b.Property<int>("Request");
 

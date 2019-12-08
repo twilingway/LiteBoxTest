@@ -54,7 +54,7 @@ namespace TestTask
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!UserExists(User.ID))
+                if (!_context.User.Any(e=> e.ID == User.ID))
                 {
                     return NotFound();
                 }
