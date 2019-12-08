@@ -30,3 +30,8 @@ D:\MySource\C#\LiteBox\TestTask\TestTask\obj\Debug\netcoreapp2.2\TestTask.Views.
 D:\MySource\C#\LiteBox\TestTask\TestTask\obj\Debug\netcoreapp2.2\TestTask.dll
 D:\MySource\C#\LiteBox\TestTask\TestTask\obj\Debug\netcoreapp2.2\TestTask.pdb
 D:\MySource\C#\LiteBox\TestTask\TestTask\obj\Debug\netcoreapp2.2\TestTask.csproj.CopyComplete
+D:\MySource\C#\LiteBox\TestTask\TestTask\obj\Debug\netcoreapp2.2\Razor\Pages\Users\Create.cshtml.g.cs
+D:\MySource\C#\LiteBox\TestTask\TestTask\obj\Debug\netcoreapp2.2\Razor\Pages\Users\Delete.cshtml.g.cs
+D:\MySource\C#\LiteBox\TestTask\TestTask\obj\Debug\netcoreapp2.2\Razor\Pages\Users\Details.cshtml.g.cs
+D:\MySource\C#\LiteBox\TestTask\TestTask\obj\Debug\netcoreapp2.2\Razor\Pages\Users\Edit.cshtml.g.cs
+D:\MySource\C#\LiteBox\TestTask\TestTask\obj\Debug\netcoreapp2.2\Razor\Pages\Users\Index.cshtml.g.cs
