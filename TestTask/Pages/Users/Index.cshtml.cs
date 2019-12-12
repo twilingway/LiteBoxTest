@@ -28,11 +28,8 @@ namespace TestTask
         public string CurrentFilter { get; set; }
         public string CurrentSort { get; set; }
 
-
-        //public IList<User> User { get; set; }
-        public new PaginatedList<User> User { get; set; }
-        // [BindProperty(SupportsGet = true)]
-        // public string SearchString { get; set; }
+        public new PaginatedList<User> Users { get; set; }
+        
         private DateTime _birthdays;
         private int _id;
         private bool _isMale;
@@ -94,9 +91,8 @@ namespace TestTask
                     break;
             }
             int pageSize = 10;
-            User = await PaginatedList<User>.CreateAsync(
+            Users = await PaginatedList<User>.CreateAsync(
                 users.AsNoTracking(), pageIndex ?? 1, pageSize);
-            //User = await users.AsNoTracking().ToListAsync();
         }
     }
 }

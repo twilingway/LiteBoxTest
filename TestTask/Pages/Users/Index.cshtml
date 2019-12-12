@@ -25,31 +25,31 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.User[0].ID)
+                @Html.DisplayNameFor(model => model.Users[0].ID)
             </th>
             <th>
                 <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort"
                    asp-route-currentFilter="@Model.CurrentFilter">
-                    @Html.DisplayNameFor(model => model.User[0].Name)
+                    @Html.DisplayNameFor(model => model.Users[0].Name)
                 </a>
             </th>
             <th>
                 <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort"
                    asp-route-currentFilter="@Model.CurrentFilter">
-                    @Html.DisplayNameFor(model => model.User[0].Birthday)
+                    @Html.DisplayNameFor(model => model.Users[0].Birthday)
                 </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User[0].IsMale)
+                @Html.DisplayNameFor(model => model.Users[0].IsMale)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User[0].Request)
+                @Html.DisplayNameFor(model => model.Users[0].Request)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.User)
+        @foreach (var item in Model.Users)
         {
             <tr>
                 <td>
@@ -77,20 +77,20 @@
     </tbody>
 </table>
 @{
-    var prevDisabled = !Model.User.HasPreviousPage ? "disabled" : "";
-    var nextDisabled = !Model.User.HasNextPage ? "disabled" : "";
+    var prevDisabled = !Model.Users.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.Users.HasNextPage ? "disabled" : "";
 }
 
 <a asp-page="./Index"
    asp-route-sortOrder="@Model.CurrentSort"
-   asp-route-pageIndex="@(Model.User.PageIndex - 1)"
+   asp-route-pageIndex="@(Model.Users.PageIndex - 1)"
    asp-route-currentFilter="@Model.CurrentFilter"
    class="btn btn-default @prevDisabled">
     Previous
 </a>
 <a asp-page="./Index"
    asp-route-sortOrder="@Model.CurrentSort"
-   asp-route-pageIndex="@(Model.User.PageIndex + 1)"
+   asp-route-pageIndex="@(Model.Users.PageIndex + 1)"
    asp-route-currentFilter="@Model.CurrentFilter"
    class="btn btn-default @nextDisabled">
     Next
