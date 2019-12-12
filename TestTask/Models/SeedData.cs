@@ -20,6 +20,7 @@ namespace TestTask.Models
                 serviceProvider.GetRequiredService<
                     DbContextOptions<TestTaskContext>>()))
             {
+               // context.Database.EnsureCreated();
                 // Look for any movies.
                 if (context.User.Any())
                 {
@@ -27,7 +28,7 @@ namespace TestTask.Models
                 }
                 await Task.Run(() =>
                 {
-                    context.User.AddRange(GetSampleUsers(5));
+                    context.User.AddRange(GetSampleUsers(50));
                     context.SaveChanges();
                 });
             }

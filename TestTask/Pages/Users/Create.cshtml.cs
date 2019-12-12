@@ -25,7 +25,7 @@ namespace TestTask
         }
 
         [BindProperty]
-        public User User { get; set; }
+        public new User User { get; set; }
 
         public async Task<IActionResult> OnPostAsync()
         {
@@ -34,10 +34,10 @@ namespace TestTask
                 return Page();
             }
 
-            _context.User.Add(User);
+            var entry = _context.Add(new User());
+            entry.CurrentValues.SetValues(User);
             await _context.SaveChangesAsync();
-
-            return RedirectToPage("./Index");
+                return RedirectToPage("./Index");
         }
     }
 }
